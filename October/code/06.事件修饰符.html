@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="app">
+        <p>count的值是：{{count}}</p>
+      <a href="http://www.baidu.com" @click.prevent="show">跳转到百度页面</a>
+    </div>
+
+    <!-- 导入Vue的库文件，在window全局就有了这个构造函数 -->
+    <script src="./lib//vue-2.6.12.js"></script>
+    <script>
+        //创建vue的实例对象
+        const vm=new Vue({
+            //el属性是固定的写法，表示当前vm实例要控制页面那个区域，接收的值是一个选择器
+            el:'#app',
+            data:{
+                count:0
+            },
+            methods:{
+                //method的作用，定义事件的处理函数
+                show(){
+                    console.log('不会跳转');
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>count的值是：{{count}}</p>
+        <!-- 在绑定事件处理函数的时候，可以使用()传参 -->
+        <!-- v-on:指令可以简写为@ -->
+        <button @click="add(2)">+</button>
+        <button v-on:click="sub">-</button>
+    </div>
+
+    <!-- 导入Vue的库文件，在window全局就有了这个构造函数 -->
+    <script src="./lib//vue-2.6.12.js"></script>
+    <script>
+        //创建vue的实例对象
+        const vm=new Vue({
+            //el属性是固定的写法，表示当前vm实例要控制页面那个区域，接收的值是一个选择器
+            el:'#app',
+            data:{
+                count:0
+            },
+            methods:{
+                //method的作用，定义事件的处理函数
+                add(){
+                    // console.log(vm===this);
+                    this.count+=n;
+                },
+                sub(){
+                    this.count-=1;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

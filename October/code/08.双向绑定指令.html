@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>用户的名字是：{{username}}</p>
+        <!-- 表单元素使用双向绑定指令才有意义 ，普通元素没有意义-->
+        <input type="text" v-model="username">
+        <hr>
+        <!-- 属性绑定 是单向绑定 -->
+        <input type="text" :value="username">
+        <hr>
+        <select v-model="city">
+            <option value="">请输入城市：</option>
+            <option value="1">成都</option>
+            <option value="2">长沙</option>
+            <option value="3">北京</option>
+        </select>
+
+    </div>
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        const vm=new Vue({
+            el:'#app',
+            data:{
+                username:'张三',
+                city:'2'
+            }
+
+        })
+    </script>
+</body>
+</html>
